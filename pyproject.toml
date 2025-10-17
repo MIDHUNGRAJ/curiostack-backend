@@ -1,0 +1,102 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "curiostack"
+version = "0.1.0"
+description = "Content intelligence system for crawling, filtering, and organizing web content"
+authors = [
+    { name = "Midhun G Raj", email = "neurobyte.ml@gmail.com" }
+]
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+    "Topic :: Text Processing :: Markup :: HTML",
+]
+
+dependencies = [
+    # Core dependencies
+    "python-dotenv>=1.0.0",     # Environment variable management
+    "pydantic>=2.0.0",          # Data validation
+    "rich>=13.0.0",             # Rich text and formatting in terminal
+    "cmd2>=2.4.0",              # Enhanced command line interface
+    
+    # Web crawling and processing
+    "crawl4ai>=1.0.0",          # Web crawling framework
+    "beautifulsoup4>=4.12.0",   # HTML parsing
+    "requests>=2.31.0",         # HTTP requests
+    "aiohttp>=3.9.0",          # Async HTTP requests
+    "lxml>=4.9.0",             # Fast HTML parsing
+    
+    # AI and ML components
+    "langchain>=0.1.0",         # LLM framework
+    "langchain-google-genai",   # Google AI integration
+    "langchain-huggingface",    # Huggingface integration
+    "langchain-voyageai",       # VoyageAI integration
+    "google-generativeai>=0.3.0", # Google Generative AI
+    
+    # Vector store and embeddings
+    "qdrant-client>=1.7.0",     # Vector database client
+    "sentence-transformers>=2.2.0", # Text embeddings
+    
+    # Async support
+    "asyncio>=3.4.3",          # Async I/O support
+    
+    # CLI utilities
+    "typer>=0.9.0",            # CLI application framework
+    "click>=8.0.0",            # Command line interface creation
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.23.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "mypy>=1.0.0",
+    "flake8>=6.0.0",
+]
+
+docs = [
+    "mkdocs>=1.5.0",
+    "mkdocs-material>=9.0.0",
+    "mkdocstrings>=0.24.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/curiostack"
+Documentation = "https://curiostack.readthedocs.io"
+Repository = "https://github.com/yourusername/curiostack.git"
+Changelog = "https://github.com/yourusername/curiostack/blob/main/CHANGELOG.md"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["curiostack*"]
+exclude = ["tests*"]
+
+[tool.black]
+line-length = 88
+target-version = ["py39"]
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[project.scripts]
+curiostack = "curiostack.cli:main"

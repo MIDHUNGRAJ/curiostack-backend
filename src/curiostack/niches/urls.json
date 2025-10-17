@@ -1,0 +1,30 @@
+{
+    "ai_ml": [
+        "https://aiweekly.co/issues.rss",
+        "https://news.google.com/rss/search?q=machine+learning+ai",
+        "https://towardsdatascience.com/feed/",
+        "https://www.artificialintelligence-news.com/feed/",
+        "https://venturebeat.com/tag/ai-ml-deep-learning/"
+    ],
+    "cybersecurity": [
+        "https://www.cyberscoop.com/feed/",
+        "https://www.darkreading.com/rss_simple.asp",
+        "https://www.securityweek.com/rss.xml",
+        "https://www.zdnet.com/topic/security/rss.xml",
+        "https://www.threatpost.com/feed/"
+    ],
+    "common_technology": [
+        "https://www.techcrunch.com/feed/",
+        "https://www.wired.com/feed/category/tech/latest/rss",
+        "https://www.theverge.com/rss/index.xml",
+        "https://www.engadget.com/rss.xml",
+        "https://www.cnet.com/rss/news/"
+    ],
+    "data_science": [
+        "https://www.datasciencecentral.com/feed/",
+        "https://towardsdatascience.com/feed/",
+        "https://www.kdnuggets.com/feed",
+        "https://www.dataversity.net/feed/",
+        "https://www.infoq.com/data-science/rss/"
+    ]
+}
